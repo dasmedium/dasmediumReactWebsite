@@ -5,7 +5,7 @@ var webpack = require("webpack");
 module.exports = {
   entry: [
     "./src/index",
-    "webpack-dev-server/client?http://127.0.0.1:8080/" // Specify the local server port
+    "webpack-dev-server/client?http://127.0.0.1:3000/" // Specify the local server port
   ],
   output: {
     path: path.resolve(__dirname, "build"),
