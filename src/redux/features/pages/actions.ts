@@ -10,7 +10,7 @@ export const fetchPages = createAction("FETCH_PAGES", resolve => {
 export const fetchPagesFulfilled = createAction(
   "FETCH_PAGES_SUCCESS",
   resolve => {
-    return (payload: Types.Posts) => resolve(payload);
+    return (payload: Types.Pages) => resolve(payload);
   }
 );
 

@@ -1,5 +1,9 @@
 import { bindActionCreators, Dispatch } from "redux";
-import { appInitialised } from "../../actions/index";
+import {
+  appInitialised,
+  getPagesInit,
+  getPostsInit
+} from "../../actions/index";
 import { connect } from "react-redux";
 import * as Types from "../../store/types";
 import Home from "../../../components/Home";
@@ -12,7 +16,9 @@ const mapStateToProps = (state: Types.RootState) => ({
 const mapDispatchToProps = (dispatch: Dispatch<Types.RootAction>) =>
   bindActionCreators(
     {
-      initialiseApp: appInitialised
+      initialiseApp: appInitialised,
+      getPagesInit: getPagesInit,
+      getPostsInit: getPostsInit
     },
     dispatch
   );

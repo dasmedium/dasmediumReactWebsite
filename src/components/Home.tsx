@@ -1,6 +1,7 @@
 import * as React from "react";
 import LogoGif from "./LogoGif";
 import { RouteComponentProps, withRouter } from "react-router";
+
 export type HomeProps = RouteComponentProps<{}> & {
   initialiseApp: () => any;
 };

@@ -15,4 +15,4 @@ export const pagesReducer = function(state = initialState, action: actions) {
   }
 };
 
-export type PostState = StateType<typeof pagesReducer>;
+export type PageState = StateType<typeof pagesReducer>;

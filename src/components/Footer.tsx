@@ -17,7 +17,7 @@ class Footer extends Component<FooterProps> {
         <Link className="nav-link" to="/about">
           Entrepreneurs
         </Link>
-        <Link className="nav-link" to="/about">
+        <Link className="nav-link" to="/privacy">
           Privacy
         </Link>
       </nav>

@@ -3,7 +3,7 @@ import * as Types from "../../src/redux/store/types";
 import Hero from "./Hero";
 
 interface AboutProps {
-  initialiseApp: () => any;
+  getPostsInit: () => any;
   posts: Types.Posts;
 }
 
@@ -14,7 +14,7 @@ class About extends React.Component<
   state = { title: "", content: "" };
 
   componentDidMount() {
-    this.props.initialiseApp();
+    this.props.getPostsInit();
   }
   componentWillReceiveProps(posts: any) {
     if (posts.posts) {
@@ -40,7 +40,7 @@ class About extends React.Component<
         <Hero />
         <div className="row">
           <div className="col-lg-8 col-md-10 mx-auto">
-          <h2 className="post-title">{title}</h2>
+            <h2 className="post-title">{title}</h2>
             <p>{content}</p>
           </div>
         </div>

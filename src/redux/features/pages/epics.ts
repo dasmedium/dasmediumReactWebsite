@@ -1,5 +1,5 @@
 import * as actions from "./actions";
-import { appInitialised } from "../../actions/index";
+import { getPagesInit } from "../../actions/index";
 import { Epic } from "redux-observable";
 import { map, mergeMap, catchError, filter } from "rxjs/operators";
 import { of } from "rxjs";
@@ -10,7 +10,7 @@ import { isActionOf } from "typesafe-actions";
 
 export const getPagesEpic: Epic = (actions$, store, { ajax }) =>
   actions$.pipe(
-    filter(isActionOf(appInitialised)),
+    filter(isActionOf(getPagesInit)),
     mergeMap(() => {
       return ajax({
         url: "https://dasmedium.co/wp-json/wp/v2/pages",

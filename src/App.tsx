@@ -10,7 +10,11 @@ import {
 } from "react-router-dom";
 import Home from "../src/redux/containers/posts/index";
 import Header from "./components/Header";
-import { ConnectedFooter, ConnectedAbout } from "../src/redux/containers/index";
+import {
+  ConnectedFooter,
+  ConnectedAbout,
+  ConnectedPrivacy
+} from "../src/redux/containers/index";
 
 class App extends React.Component {
   public render() {
@@ -24,7 +28,7 @@ class App extends React.Component {
               <Route path="/" component={Home} exact />
             </Switch>
             <Route exact path="/about" component={ConnectedAbout} />
-
+            <Route exact path="/privacy" component={ConnectedPrivacy} />
             <ConnectedFooter />
           </div>
         </Router>
