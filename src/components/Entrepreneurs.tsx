@@ -8,7 +8,7 @@ interface AboutProps {
   posts: Types.Posts;
 }
 
-class About extends React.Component<
+class Entrepreneurs extends React.Component<
   AboutProps,
   { title: string; content: string | Element }
 > {
@@ -20,29 +20,29 @@ class About extends React.Component<
   componentWillReceiveProps(posts: any) {
     if (posts.posts) {
       this.setState({
-        title: posts.posts[2].title.rendered,
-        content: posts.posts[2].content.rendered
+        title: posts.posts[0].title.rendered,
+        content: posts.posts[0].content.rendered
       });
     }
   }
 
   render() {
-    // let title;
+    let title;
     let content;
     if (this.state.title && this.state.content) {
-      // title = <h1 dangerouslySetInnerHTML={{ __html: this.state.title }} />;
+      title = <h1 dangerouslySetInnerHTML={{ __html: this.state.title }} />;
       content = <p dangerouslySetInnerHTML={{ __html: this.state.content }} />;
     } else {
-      // title = <div>loading</div>;
+      title = <div />;
       content = <div />;
     }
     return (
       <div>
         <div className="container">
           <Hero
-            title="the who..."
-            subheading="...And a bit about the why"
-            headerClass="masthead about"
+            title={title}
+            subheading="...let's build"
+            headerClass="masthead hero-ent"
           />
           <div className="row">
             <div className="col-lg-8 col-md-10 mx-auto">
@@ -56,4 +56,4 @@ class About extends React.Component<
   }
 }
 
-export default About;
+export default Entrepreneurs;

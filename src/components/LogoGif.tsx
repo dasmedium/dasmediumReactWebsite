@@ -28,7 +28,7 @@ class LogoGif extends Component<LogoProps, LogoState> {
       this.setState({
         currentImage: this.getRandomImageId()
       });
-    }, 6000);
+    }, 3000);
   }
 
   render() {

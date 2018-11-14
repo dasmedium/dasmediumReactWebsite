@@ -11,9 +11,10 @@ import {
 import Home from "../src/redux/containers/posts/index";
 import Header from "./components/Header";
 import {
-  ConnectedFooter,
   ConnectedAbout,
-  ConnectedPrivacy
+  ConnectedPrivacy,
+  ConnectedDev,
+  ConnectedEnt
 } from "../src/redux/containers/index";
 
 class App extends React.Component {
@@ -29,7 +30,8 @@ class App extends React.Component {
             </Switch>
             <Route exact path="/about" component={ConnectedAbout} />
             <Route exact path="/privacy" component={ConnectedPrivacy} />
-            <ConnectedFooter />
+            <Route exact path="/developers" component={ConnectedDev} />
+            <Route exact path="/entrepreneurs" component={ConnectedEnt} />
           </div>
         </Router>
       </Provider>

@@ -7,6 +7,7 @@
   height: 200px;
 }
 header.home-div {
+  height: 100vh;
   background: no-repeat center center;
   background-color: #868e96;
   background-attachment: scroll;
@@ -31,9 +32,16 @@ header.masthead {
   background-attachment: scroll;
   position: relative;
   background-size: cover;
-  background-image: url("./img/IMG_0701.jpg");
 }
-
+header.about {
+  background-image: url("./img/IMG_0711.jpg");
+}
+header.hero-dev {
+  background-image: url("./img/IMG_0603.jpg");
+}
+header.hero-ent {
+  background-image: url("./img/IMG_0775.jpg");
+}
 header.masthead .overlay {
   position: absolute;
   top: 0;
@@ -41,7 +49,7 @@ header.masthead .overlay {
   height: 100%;
   width: 100%;
   background-color: #212529;
-  opacity: 0.5;
+  opacity: 0.2;
 }
 
 header.masthead .page-heading,
@@ -139,9 +147,11 @@ header.masthead .post-heading .meta a {
 }
 .nav-link {
   color: white;
-  margin-top: 3%;
 }
 
+.nav-class {
+  background-color: rgba(244, 194, 55, 0.589);
+}
 .App-header {
   background-color: transparent;
   height: 100px;
@@ -158,4 +168,10 @@ header.masthead .post-heading .meta a {
 
 .App-intro {
   font-size: large;
+}
+
+.page-text {
+  text-align: left;
+  margin-bottom: 10%;
+  color: #7f7979;
 }

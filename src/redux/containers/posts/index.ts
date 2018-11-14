@@ -9,7 +9,8 @@ import * as Types from "../../store/types";
 import Home from "../../../components/Home";
 import Footer from "../../../components/Footer";
 import About from "../../../components/About";
-
+import Developers from "../../../components/Developers";
+import Entrepreneurs from "../../../components/Entrepreneurs";
 const mapStateToProps = (state: Types.RootState) => ({
   posts: state.posts.posts
 });
@@ -27,6 +28,14 @@ export const ConnectedAbout = connect(
   mapStateToProps,
   mapDispatchToProps
 )(About);
+export const ConnectedDev = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Developers);
+export const ConnectedEnt = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Entrepreneurs);
 export const ConnectedFooter = connect(
   mapStateToProps,
   mapDispatchToProps
