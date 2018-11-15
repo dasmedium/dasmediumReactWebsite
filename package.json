@@ -19,8 +19,9 @@
     "redux-observable": "^1.0.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --inline --progress --config ./src/webpack.config.js",
-    "build": "babel src --out-dir build --extensions \".ts,.tsx\"",
+    "start": "webpack-dev-server --open --progress --config ./src/webpack.dev.js",
+    "build": "webpack --config ./src/webpack.prod.js",
+    "babel-build": "babel src --out-dir build --extensions \".ts,.tsx\"",
     "type-check": "tsc",
     "bundle": "webpack",
     "test": "react-scripts-ts test --env=jsdom",
@@ -61,6 +62,7 @@
     "utility-types": "^2.1.0",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.9"
+    "webpack-dev-server": "^3.1.9",
+    "webpack-merge": "^4.1.4"
   }
 }

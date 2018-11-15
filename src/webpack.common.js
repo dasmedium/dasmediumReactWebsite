@@ -3,10 +3,7 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 var webpack = require("webpack");
 
 module.exports = {
-  entry: [
-    "./src/index",
-    "webpack-dev-server/client?http://127.0.0.1:3000/" // Specify the local server port
-  ],
+  entry: ["./src/index"],
   output: {
     path: path.resolve(__dirname, "build"),
     filename: "bundle.js",
