@@ -1,5 +1,4 @@
-![alt text](<https://github.com/dasmedium/dasmediumReactWebsite/blob/master/src/img/DM-Icon-(mad).png | width=150> "Das Medium")
-
+<img src="https://github.com/dasmedium/dasmediumReactWebsite/blob/master/src/img/DM-Icon-(mad).png" width="150" height="150"/>
 ## Das Medium core website
 
 This is Das Medium's core website. Currently it feeds content from our legacy Wordpress site.
