@@ -13,7 +13,7 @@ export const getPagesEpic: Epic = (actions$, store, { ajax }) =>
     filter(isActionOf(getPagesInit)),
     mergeMap(() => {
       return ajax({
-        url: "https://dasmedium.co/wp-json/wp/v2/pages",
+        url: "https://wp.dasmedium.co/wp-json/wp/v2/pages",
         crossDomain: true,
         contentType: "application/json; charset=utf-8",
         responseType: "json"

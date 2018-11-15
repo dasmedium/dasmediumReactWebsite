@@ -11,7 +11,7 @@ export const getPostsEpic: Epic = (action$, store, { ajax }) =>
     filter(isActionOf(getPostsInit)),
     mergeMap(() => {
       return ajax({
-        url: "https://dasmedium.co/wp-json/wp/v2/posts",
+        url: "https://wp.dasmedium.co/wp-json/wp/v2/posts",
         crossDomain: true,
         contentType: "application/json; charset=utf-8",
         responseType: "json"
