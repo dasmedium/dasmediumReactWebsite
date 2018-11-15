@@ -1,5 +1,5 @@
-![Das Medium][logo]
-[logo]: https://github.com/dasmedium/dasmediumReactWebsite/blob/master/src/img/DM-Icon-(mad).png
+![alt text][logo]
+[logo]: https://github.com/dasmedium/dasmediumReactWebsite/blob/master/src/img/DM-Icon-(mad).png "Das Medium"
 
 ## Das Medium core website
 
