@@ -1,4 +1,5 @@
 <img src="https://github.com/dasmedium/dasmediumReactWebsite/blob/master/src/img/DM-Full-(mad).png" />
+
 ## Das Medium core website
 
 This is Das Medium's core website. Currently it feeds content from our legacy Wordpress site.
