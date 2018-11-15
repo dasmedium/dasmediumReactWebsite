@@ -4,6 +4,10 @@
 /node_modules
 /mockserver
 
+#docker nginx config file
+default.conf
+#Dockerfile
+Dockerfile
 # testing
 /coverage
 
