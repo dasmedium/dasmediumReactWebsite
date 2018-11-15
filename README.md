@@ -1,5 +1,4 @@
-![alt text][logo]
-[logo]: https://github.com/dasmedium/dasmediumReactWebsite/blob/master/src/img/DM-Icon-(mad).png "Das Medium"
+![alt text](<https://github.com/dasmedium/dasmediumReactWebsite/blob/master/src/img/DM-Icon-(mad).png> "Das Medium")
 
 ## Das Medium core website
 
