@@ -34,7 +34,7 @@ class LogoGif extends Component<LogoProps, LogoState> {
   render() {
     const images = [logo1, logo2, logo3, logo4];
     return (
-      <div className="container" id="Dm-logo-gif">
+      <div id="Dm-logo-gif">
         <img
           className="Dm-logo-gif"
           src={images[this.state.currentImage]}

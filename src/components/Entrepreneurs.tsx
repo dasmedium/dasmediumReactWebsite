@@ -46,7 +46,7 @@ class Entrepreneurs extends React.Component<
             subheading="...let's build"
             headerClass="masthead hero-ent"
           />
-          <div className="row">
+          <div className="row page-text-div">
             <div className="col-lg-8 col-md-10 mx-auto">
               <p className="page-text">{content}</p>
             </div>

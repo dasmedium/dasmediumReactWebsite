@@ -2,13 +2,18 @@
   text-align: center;
 }
 
+/* Drift Chat Widget */
+.flex-center {
+  margin-right: 10px;
+}
+
 .Dm-logo-gif {
   margin-top: 10%;
   height: 200px;
 }
 @media only screen and (min-height: 731px) {
   .Dm-logo-gif {
-    margin-top: 45%;
+    margin-top: 25%;
     height: 180px;
   }
 }
@@ -215,6 +220,10 @@ nav.about {
   padding-left: 15px;
   padding-right: 15px;
   color: #7f7979;
+}
+.page-text-div {
+  margin-left: 0px;
+  margin-right: 0px;
 }
 .excerpt {
   display: none;

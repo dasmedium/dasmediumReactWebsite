@@ -42,7 +42,7 @@ export default class Privacy extends React.Component<
       <div>
         <Header navClass="navbar navbar-expand-lg fixed-top" />
         <div className="container">
-          <div className="row">
+          <div className="row page-text-div">
             <div className="col-lg-8 col-md-10 mx-auto mt-5">
               <h2 className="post-title mt-5">{title}</h2>
               <p className="page-text">{content}</p>

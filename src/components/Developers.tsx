@@ -50,7 +50,7 @@ class Developers extends React.Component<
             subheading="Hit me up..."
             headerClass="masthead hero-dev"
           />
-          <div className="row">
+          <div className="row page-text-div">
             <div className="col-lg-8 col-md-10 mx-auto">
               <p className="excerpt">{excerpt}</p>
               <p className="page-text">{content}</p>

@@ -46,7 +46,7 @@ class About extends React.Component<
             subheading="...And a bit about the why"
             headerClass="masthead about"
           />
-          <div className="row">
+          <div className="row page-text-div">
             <div className="col-lg-8 col-md-10 mx-auto">
               <p className="page-text">{content}</p>
             </div>
