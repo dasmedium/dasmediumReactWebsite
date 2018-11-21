@@ -9,7 +9,7 @@ import {
   Redirect
 } from "react-router-dom";
 import Home from "../src/redux/containers/posts/index";
-import Header from "./components/Header";
+import Header from "../src/components/Header";
 import {
   ConnectedAbout,
   ConnectedPrivacy,
@@ -23,11 +23,8 @@ class App extends React.Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-            <Header />
+            <Route path="/" component={Home} exact />
 
-            <Switch>
-              <Route path="/" component={Home} exact />
-            </Switch>
             <Route exact path="/about" component={ConnectedAbout} />
             <Route exact path="/privacy" component={ConnectedPrivacy} />
             <Route exact path="/developers" component={ConnectedDev} />

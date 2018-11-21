@@ -1,6 +1,8 @@
 import * as React from "react";
 import * as Types from "../../src/redux/store/types";
 import LogoGif from "../components/LogoGif";
+import Header from "./Header";
+import { ConnectedFooter } from "../../src/redux/containers/index";
 interface PrivacyProps {
   getPagesInit: () => any;
   pages: Types.Pages;
@@ -37,13 +39,17 @@ export default class Privacy extends React.Component<
       content = <div />;
     }
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-8 col-md-10 mx-auto mt-5">
-            <h2 className="post-title">{title}</h2>
-            <p className="page-text">{content}</p>
+      <div>
+        <Header navClass="navbar navbar-expand-lg fixed-top" />
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-8 col-md-10 mx-auto mt-5">
+              <h2 className="post-title mt-5">{title}</h2>
+              <p className="page-text">{content}</p>
+            </div>
           </div>
         </div>
+        <ConnectedFooter navClass="navbar fixed-bottom navbar-expand-sm nav-class-home" />
       </div>
     );
   }

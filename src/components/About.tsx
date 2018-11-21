@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as Types from "../../src/redux/store/types";
 import Hero from "./Hero";
+import Header from "./Header";
 import { ConnectedFooter } from "../../src/redux/containers/index";
 
 interface AboutProps {
@@ -34,11 +35,37 @@ class About extends React.Component<
       content = <p dangerouslySetInnerHTML={{ __html: this.state.content }} />;
     } else {
       // title = <div>loading</div>;
-      content = <div />;
+      content = (
+        <div>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere, quo
+          deleniti molestias omnis quos aperiam ab qui sequi nobis, dolorem a
+          molestiae aliquam voluptates vel, distinctio quam. At, architecto
+          dolores. Vitae iusto enim deserunt laudantium recusandae maxime,
+          officia dignissimos laboriosam minima error possimus incidunt tenetur
+          ipsa corrupti? Facilis velit labore nobis alias illo omnis cupiditate
+          earum eum et dolorem! Voluptas maiores illum hic explicabo. Aut dolor
+          aliquid voluptatum, architecto molestias qui placeat quis dolores
+          magni rem odio odit veritatis officiis sapiente esse totam! Ducimus
+          consequatur, iste illo esse laboriosam voluptate doloremque tenetur
+          eligendi fugit a obcaecati nulla voluptatibus suscipit molestias.
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere, quo
+          deleniti molestias omnis quos aperiam ab qui sequi nobis, dolorem a
+          molestiae aliquam voluptates vel, distinctio quam. At, architecto
+          dolores. Vitae iusto enim deserunt laudantium recusandae maxime,
+          officia dignissimos laboriosam minima error possimus incidunt tenetur
+          ipsa corrupti? Facilis velit labore nobis alias illo omnis cupiditate
+          earum eum et dolorem! Voluptas maiores illum hic explicabo. Aut dolor
+          aliquid voluptatum, architecto molestias qui placeat quis dolores
+          magni rem odio odit veritatis officiis sapiente esse totam! Ducimus
+          consequatur, iste illo esse laboriosam voluptate doloremque tenetur
+          eligendi fugit a obcaecati nulla voluptatibus suscipit molestias.
+        </div>
+      );
     }
     return (
       <div>
-        <div className="container">
+        <Header navClass="navbar navbar-expand-lg fixed-top about" />
+        <div>
           <Hero
             title="the who..."
             subheading="...And a bit about the why"
@@ -50,7 +77,7 @@ class About extends React.Component<
             </div>
           </div>
         </div>
-        <ConnectedFooter navClass="navbar fixed-bottom navbar-expand-sm nav-class" />
+        <ConnectedFooter navClass="navbar fixed-bottom navbar-expand-sm nav-class-home" />
       </div>
     );
   }

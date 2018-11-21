@@ -6,6 +6,12 @@
   margin-top: 10%;
   height: 200px;
 }
+@media only screen and (min-height: 731px) {
+  .Dm-logo-gif {
+    margin-top: 45%;
+    height: 180px;
+  }
+}
 header.home-div {
   height: 100vh;
   background: no-repeat center center;
@@ -48,7 +54,7 @@ header.masthead .overlay {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #212529;
+  background-color: #808f9e;
   opacity: 0.2;
 }
 
@@ -56,8 +62,9 @@ header.masthead .page-heading,
 header.masthead .post-heading,
 header.masthead .site-heading,
 header.home-div .site-heading {
-  padding: 200px 0 150px;
+  padding: 10% 0 150px;
   color: white;
+  margin-top: 30%;
 }
 
 @media only screen and (min-width: 768px) {
@@ -66,6 +73,7 @@ header.home-div .site-heading {
   header.masthead .site-heading,
   header.home-div .site-heading {
     padding: 200px 0;
+    margin-top: 0px;
   }
 }
 
@@ -138,6 +146,10 @@ header.masthead .post-heading .meta a {
   }
 }
 
+.main-header {
+  margin-bottom: 5%;
+}
+
 .Dm-logo {
   height: 60px;
   float: left;
@@ -149,9 +161,35 @@ header.masthead .post-heading .meta a {
   color: white;
 }
 
-.nav-class {
-  background-color: rgba(244, 194, 55, 0.589);
+.nav-home {
+  background: rgb(102, 189, 252);
+  padding-top: 18%;
 }
+.nav-class-home {
+  padding: 0px;
+  display: none;
+}
+.fa-bars {
+  color: lightgrey;
+}
+@media only screen and (min-width: 736px) {
+  .nav-class-home {
+    background: rgb(102, 189, 252);
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 736px) {
+  .navbar-toggler {
+    display: none;
+  }
+}
+
+nav.about {
+  padding-bottom: 5%;
+  margin-bottom: 20%;
+}
+
 .App-header {
   background-color: transparent;
   height: 100px;
@@ -173,5 +211,22 @@ header.masthead .post-heading .meta a {
 .page-text {
   text-align: left;
   margin-bottom: 10%;
+  padding-bottom: 20%;
+  padding-left: 15px;
+  padding-right: 15px;
   color: #7f7979;
+}
+.excerpt {
+  display: none;
+}
+@media only screen and (min-width: 732px) {
+  .excerpt {
+    display: inline;
+  }
+}
+
+@media only screen and (min-height: 732px) {
+  nav.nav-bar {
+    padding: 0.5rem 1rem;
+  }
 }

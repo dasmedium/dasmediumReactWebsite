@@ -1,5 +1,6 @@
 import * as React from "react";
 import LogoGif from "./LogoGif";
+import Header from "./Header";
 import { RouteComponentProps, withRouter } from "react-router";
 import { ConnectedFooter } from "../../src/redux/containers/index";
 
@@ -24,6 +25,7 @@ class Home extends React.Component<HomeProps, HomeState> {
   render() {
     return (
       <div>
+        <Header navClass="navbar navbar-expand-lg fixed-top home" />
         <header className="home-div">
           <div className="overlay" />
           <div className="container">
@@ -36,7 +38,7 @@ class Home extends React.Component<HomeProps, HomeState> {
             </div>
           </div>
         </header>
-        <ConnectedFooter navClass="navbar fixed-bottom navbar-expand-sm" />
+        <ConnectedFooter navClass="navbar fixed-bottom navbar-expand-sm nav-class-home" />
       </div>
     );
   }

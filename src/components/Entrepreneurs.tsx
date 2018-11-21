@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as Types from "../../src/redux/store/types";
 import Hero from "./Hero";
+import Header from "./Header";
 import { ConnectedFooter } from "../../src/redux/containers/index";
 
 interface AboutProps {
@@ -38,7 +39,8 @@ class Entrepreneurs extends React.Component<
     }
     return (
       <div>
-        <div className="container">
+        <Header navClass="navbar navbar-expand-lg fixed-top" />
+        <div>
           <Hero
             title={title}
             subheading="...let's build"
@@ -50,7 +52,7 @@ class Entrepreneurs extends React.Component<
             </div>
           </div>
         </div>
-        <ConnectedFooter navClass="navbar fixed-bottom navbar-expand-sm nav-class" />
+        <ConnectedFooter navClass="navbar fixed-bottom navbar-expand-sm nav-class-home" />
       </div>
     );
   }
