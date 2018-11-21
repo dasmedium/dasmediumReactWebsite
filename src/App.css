@@ -71,6 +71,14 @@ header.home-div .site-heading {
   margin-top: 30%;
 }
 
+@media only screen and (min-width: 732px) {
+  header.masthead .page-heading,
+  header.masthead .post-heading,
+  header.masthead .site-heading,
+  header.home-div .site-heading {
+    margin-top: 0px;
+  }
+}
 @media only screen and (min-width: 768px) {
   header.masthead .page-heading,
   header.masthead .post-heading,
