@@ -1,0 +1,9 @@
+version: "2"
+
+services:
+  dasmedium.co:
+    image: dasmedium/reactsite:latest
+    container_name: dasmedium.co
+    restart: unless-stopped
+    ports:
+      - 80:80
