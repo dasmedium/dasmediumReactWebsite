@@ -14,7 +14,8 @@ import {
   ConnectedAbout,
   ConnectedPrivacy,
   ConnectedDev,
-  ConnectedEnt
+  ConnectedEnt,
+  ConnectedTermsConditions
 } from "../src/redux/containers/index";
 
 class App extends React.Component {
@@ -29,6 +30,7 @@ class App extends React.Component {
             <Route exact path="/privacy" component={ConnectedPrivacy} />
             <Route exact path="/developers" component={ConnectedDev} />
             <Route exact path="/entrepreneurs" component={ConnectedEnt} />
+            <Route exact path="/terms" component={ConnectedTermsConditions} />
           </div>
         </Router>
       </Provider>

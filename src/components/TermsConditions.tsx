@@ -1,33 +1,32 @@
 import * as React from "react";
-import * as Types from "../../src/redux/store/types";
-import LogoGif from "../components/LogoGif";
 import Header from "./Header";
 import { ConnectedFooter } from "../../src/redux/containers/index";
+import LogoGif from "../components/LogoGif";
+import * as Types from "../../src/redux/store/types";
 
-interface PrivacyProps {
-  getPagesInit: () => void;
+interface TermsConditionsProps {
+  getPagesInit: () => any;
   pages: State;
 }
 type State = Types.Pages;
 
-export default class Privacy extends React.Component<
-  PrivacyProps,
+class TermsConditions extends React.Component<
+  TermsConditionsProps,
   { title: string; content: string }
 > {
   state = { title: "", content: "" };
   componentDidMount() {
     this.props.getPagesInit();
   }
-
-  // TODO: Get page by id
-  componentWillReceiveProps(nextProps: PrivacyProps) {
+  componentWillReceiveProps(nextProps: TermsConditionsProps) {
     if (nextProps.pages) {
       this.setState({
-        title: nextProps.pages[2].title.rendered,
-        content: nextProps.pages[2].content.rendered
+        title: nextProps.pages[0].title.rendered,
+        content: nextProps.pages[0].content.rendered
       });
     }
   }
+
   render() {
     let title;
     let content;
@@ -58,3 +57,4 @@ export default class Privacy extends React.Component<
     );
   }
 }
+export default TermsConditions;

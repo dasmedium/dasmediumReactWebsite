@@ -7,6 +7,7 @@ import {
 import { connect } from "react-redux";
 import * as Types from "../../store/types";
 import Privacy from "../../../components/Privacy";
+import TermsConditions from "../../../components/TermsConditions";
 
 const mapStateToProps = (state: Types.RootState) => ({
   posts: state.posts.posts,
@@ -24,3 +25,8 @@ export const ConnectedPrivacy = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Privacy);
+
+export const ConnectedTermsConditions = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TermsConditions);
