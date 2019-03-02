@@ -2,14 +2,8 @@ import * as React from "react";
 import "./App.css";
 import { store } from "./redux/store/store";
 import { Provider } from "react-redux";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect
-} from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "../src/redux/containers/posts/index";
-import Header from "../src/components/Header";
 import {
   ConnectedAbout,
   ConnectedPrivacy,
