@@ -5,10 +5,10 @@ import Header from "./Header";
 import { ConnectedFooter } from "../../src/redux/containers/index";
 
 interface DevProps {
-  getPostsInit: () => any;
-  posts: Types.Posts;
+  getPostsInit: (params: string) => { payload: string };
+  posts: State;
 }
-
+type State = Types.Posts;
 class Developers extends React.Component<
   DevProps,
   { title: string; content: string | Element; excerpt: string | Element }
@@ -16,14 +16,14 @@ class Developers extends React.Component<
   state = { title: "", content: "", excerpt: "" };
 
   componentDidMount() {
-    this.props.getPostsInit();
+    this.props.getPostsInit("developers");
   }
-  componentWillReceiveProps(posts: any) {
-    if (posts.posts) {
+  componentWillReceiveProps(nextProps: DevProps) {
+    if (nextProps.posts) {
       this.setState({
-        title: posts.posts[1].title.rendered,
-        content: posts.posts[1].content.rendered,
-        excerpt: posts.posts[1].excerpt.rendered
+        title: nextProps.posts[0].title.rendered,
+        content: nextProps.posts[0].content.rendered,
+        excerpt: nextProps.posts[0].excerpt.rendered
       });
     }
   }

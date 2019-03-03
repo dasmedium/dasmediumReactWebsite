@@ -8,16 +8,11 @@ import { isActionOf } from "typesafe-actions";
 
 // Epics
 
-export const getPagesEpic: Epic = (actions$, store, { ajax }) =>
+export const getPagesEpic: Epic = (actions$, store, { PageService }) =>
   actions$.pipe(
     filter(isActionOf(getPagesInit)),
-    mergeMap(() => {
-      return ajax({
-        url: "https://wp.dasmedium.co/wp-json/wp/v2/pages",
-        crossDomain: true,
-        contentType: "application/json; charset=utf-8",
-        responseType: "json"
-      });
+    mergeMap(action => {
+      return PageService.get(action.payload);
     }),
     map(({ response }) => actions.fetchPagesFulfilled(response)),
     catchError(

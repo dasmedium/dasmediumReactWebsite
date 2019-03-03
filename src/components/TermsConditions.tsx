@@ -5,7 +5,7 @@ import LogoGif from "../components/LogoGif";
 import * as Types from "../../src/redux/store/types";
 
 interface TermsConditionsProps {
-  getPagesInit: () => any;
+  getPagesInit: (params: string) => { payload: string };
   pages: State;
 }
 type State = Types.Pages;
@@ -16,7 +16,7 @@ class TermsConditions extends React.Component<
 > {
   state = { title: "", content: "" };
   componentDidMount() {
-    this.props.getPagesInit();
+    this.props.getPagesInit("terms-and-conditions");
   }
   componentWillReceiveProps(nextProps: TermsConditionsProps) {
     if (nextProps.pages) {

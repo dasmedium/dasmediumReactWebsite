@@ -6,16 +6,11 @@ import { isActionOf } from "typesafe-actions";
 import { getPostsInit } from "../../actions/index";
 import * as actions from "./actions";
 
-export const getPostsEpic: Epic = (action$, store, { ajax }) =>
+export const getPostsEpic: Epic = (action$, store, { PostService }) =>
   action$.pipe(
     filter(isActionOf(getPostsInit)),
-    mergeMap(() => {
-      return ajax({
-        url: "https://wp.dasmedium.co/wp-json/wp/v2/posts",
-        crossDomain: true,
-        contentType: "application/json; charset=utf-8",
-        responseType: "json"
-      });
+    mergeMap(action => {
+      return PostService.get(action.payload);
     }),
     map(({ response }) => actions.fetchPostFulfilled(response)),
     catchError(

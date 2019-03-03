@@ -4,25 +4,25 @@ import Hero from "./Hero";
 import Header from "./Header";
 import { ConnectedFooter } from "../../src/redux/containers/index";
 
-interface AboutProps {
-  getPostsInit: () => any;
-  posts: Types.Posts;
+interface EntProps {
+  getPostsInit: (params: string) => { payload: string };
+  posts: State;
 }
-
+type State = Types.Posts;
 class Entrepreneurs extends React.Component<
-  AboutProps,
+  EntProps,
   { title: string; content: string | Element }
 > {
   state = { title: "", content: "" };
 
   componentDidMount() {
-    this.props.getPostsInit();
+    this.props.getPostsInit("entrepreneurs");
   }
-  componentWillReceiveProps(posts: any) {
-    if (posts.posts) {
+  componentWillReceiveProps(nextProps: EntProps) {
+    if (nextProps.posts) {
       this.setState({
-        title: posts.posts[0].title.rendered,
-        content: posts.posts[0].content.rendered
+        title: nextProps.posts[0].title.rendered,
+        content: nextProps.posts[0].content.rendered
       });
     }
   }

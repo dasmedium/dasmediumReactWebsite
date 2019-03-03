@@ -1,9 +1,5 @@
 import { bindActionCreators, Dispatch } from "redux";
-import {
-  appInitialised,
-  getPagesInit,
-  getPostsInit
-} from "../../actions/index";
+import { getPagesInit } from "../../actions/index";
 import { connect } from "react-redux";
 import * as Types from "../../store/types";
 import Privacy from "../../../components/Privacy";

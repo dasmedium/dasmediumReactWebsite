@@ -5,9 +5,11 @@ import Header from "./Header";
 import { ConnectedFooter } from "../../src/redux/containers/index";
 
 interface AboutProps {
-  getPostsInit: () => any;
-  posts: Types.Posts;
+  getPostsInit: (params: string) => { payload: string };
+  posts: State;
 }
+
+type State = Types.Posts;
 
 class About extends React.Component<
   AboutProps,
@@ -16,13 +18,13 @@ class About extends React.Component<
   state = { title: "", content: "" };
 
   componentDidMount() {
-    this.props.getPostsInit();
+    this.props.getPostsInit("about-us");
   }
-  componentWillReceiveProps(posts: any) {
-    if (posts.posts) {
+  componentWillReceiveProps(nextProps: AboutProps) {
+    if (nextProps.posts) {
       this.setState({
-        title: posts.posts[2].title.rendered,
-        content: posts.posts[2].content.rendered
+        title: nextProps.posts[0].title.rendered,
+        content: nextProps.posts[0].content.rendered
       });
     }
   }

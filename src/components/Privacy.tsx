@@ -5,7 +5,7 @@ import Header from "./Header";
 import { ConnectedFooter } from "../../src/redux/containers/index";
 
 interface PrivacyProps {
-  getPagesInit: () => void;
+  getPagesInit: (params: string) => { payload: string };
   pages: State;
 }
 type State = Types.Pages;
@@ -16,15 +16,15 @@ export default class Privacy extends React.Component<
 > {
   state = { title: "", content: "" };
   componentDidMount() {
-    this.props.getPagesInit();
+    this.props.getPagesInit("privacy-policy");
   }
 
   // TODO: Get page by id
   componentWillReceiveProps(nextProps: PrivacyProps) {
     if (nextProps.pages) {
       this.setState({
-        title: nextProps.pages[2].title.rendered,
-        content: nextProps.pages[2].content.rendered
+        title: nextProps.pages[0].title.rendered,
+        content: nextProps.pages[0].content.rendered
       });
     }
   }

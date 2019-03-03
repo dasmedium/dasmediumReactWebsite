@@ -3,10 +3,10 @@ import rootReducer from "./root-reducer";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { createEpicMiddleware } from "redux-observable";
 import { rootEpic } from "./root-epic";
-import { ajax } from "rxjs/ajax";
+import services from "../services/index";
 
 const epicMiddleware = createEpicMiddleware({
-  dependencies: { ajax }
+  dependencies: services
 });
 
 const enhancer = composeWithDevTools(applyMiddleware(...[epicMiddleware]));
