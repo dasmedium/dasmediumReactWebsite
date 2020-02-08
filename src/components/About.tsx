@@ -3,6 +3,7 @@ import * as Types from "../../src/redux/store/types";
 import Hero from "./Hero";
 import Header from "./Header";
 import { ConnectedFooter } from "../../src/redux/containers/index";
+const clean = require('dompurify');
 
 interface AboutProps {
   getPostsInit: (params: string) => { payload: string };
@@ -13,7 +14,7 @@ type State = Types.Posts;
 
 class About extends React.Component<
   AboutProps,
-  { title: string; content: string | Element }
+  { title: string; content: string }
 > {
   state = { title: "", content: "" };
 
@@ -28,16 +29,16 @@ class About extends React.Component<
       });
     }
   }
-
+  
   render() {
     // let title;
-    let content;
+    let content = clean.sanitize(this.state.content);
     if (this.state.title && this.state.content) {
       // title = <h1 dangerouslySetInnerHTML={{ __html: this.state.title }} />;
-      content = <p dangerouslySetInnerHTML={{ __html: this.state.content }} />;
+      content = <p dangerouslySetInnerHTML={{__html: content}}/>;
     } else {
       // title = <div>loading</div>;
-      content = <div />;
+      content = "";
     }
     return (
       <div>

@@ -1,8 +1,7 @@
 import * as React from "react";
 import classnames from "classnames";
 
-import img2 from "../img/IMG_0781.jpg";
-import img3 from "../img/IMG_0603.jpg";
+
 
 interface HeroProps {
   title: JSX.Element | string;

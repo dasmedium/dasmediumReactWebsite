@@ -3,6 +3,7 @@ import * as Types from "../../src/redux/store/types";
 import Hero from "./Hero";
 import Header from "./Header";
 import { ConnectedFooter } from "../../src/redux/containers/index";
+const clean = require('dompurify');
 
 interface DevProps {
   getPostsInit: (params: string) => { payload: string };
@@ -11,9 +12,9 @@ interface DevProps {
 type State = Types.Posts;
 class Developers extends React.Component<
   DevProps,
-  { title: string; content: string | Element; excerpt: string | Element }
+  { title: string; content: string | Element; }
 > {
-  state = { title: "", content: "", excerpt: "" };
+  state = { title: "", content: ""};
 
   componentDidMount() {
     this.props.getPostsInit("developers");
@@ -22,24 +23,23 @@ class Developers extends React.Component<
     if (nextProps.posts) {
       this.setState({
         title: nextProps.posts[0].title.rendered,
-        content: nextProps.posts[0].content.rendered,
-        excerpt: nextProps.posts[0].excerpt.rendered
+        content: nextProps.posts[0].content.rendered
       });
     }
   }
 
   render() {
-    let title;
-    let content;
-    let excerpt;
+    let title = clean.sanitize(this.state.title);
+    let content = clean.sanitize(this.state.content);
+    
     if (this.state.title && this.state.content) {
-      title = <h1 dangerouslySetInnerHTML={{ __html: this.state.title }} />;
-      content = <p dangerouslySetInnerHTML={{ __html: this.state.content }} />;
-      excerpt = <p dangerouslySetInnerHTML={{ __html: this.state.excerpt }} />;
+      title = <h1 dangerouslySetInnerHTML={{ __html: title }} />;
+      content = <p dangerouslySetInnerHTML={{ __html: content }} />;
+      
     } else {
       title = <div />;
       content = <div />;
-      excerpt = <div />;
+
     }
     return (
       <div>
@@ -52,7 +52,7 @@ class Developers extends React.Component<
           />
           <div className="row page-text-div">
             <div className="col-lg-8 col-md-10 mx-auto">
-              <p className="excerpt">{excerpt}</p>
+              
               <p className="page-text">{content}</p>
             </div>
           </div>

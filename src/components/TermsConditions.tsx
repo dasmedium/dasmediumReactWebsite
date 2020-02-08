@@ -3,6 +3,7 @@ import Header from "./Header";
 import { ConnectedFooter } from "../../src/redux/containers/index";
 import LogoGif from "../components/LogoGif";
 import * as Types from "../../src/redux/store/types";
+const clean = require('dompurify');
 
 interface TermsConditionsProps {
   getPagesInit: (params: string) => { payload: string };
@@ -28,11 +29,11 @@ class TermsConditions extends React.Component<
   }
 
   render() {
-    let title;
-    let content;
+    let title = clean.sanitize(this.state.title);
+    let content = clean.sanitize(this.state.content);
     if (this.state.title && this.state.content) {
-      title = <h1 dangerouslySetInnerHTML={{ __html: this.state.title }} />;
-      content = <p dangerouslySetInnerHTML={{ __html: this.state.content }} />;
+      title = <h1 dangerouslySetInnerHTML={{ __html: title }} />;
+      content = <p dangerouslySetInnerHTML={{ __html: content }} />;
     } else {
       title = (
         <div>
