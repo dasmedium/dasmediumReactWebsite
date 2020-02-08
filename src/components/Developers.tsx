@@ -47,7 +47,7 @@ class Developers extends React.Component<
         <div>
           <Hero
             title={title}
-            subheading="Hit me up..."
+            subheading="Get in touch..."
             headerClass="masthead hero-dev"
           />
           <div className="row page-text-div">

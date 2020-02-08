@@ -43,7 +43,7 @@ class Entrepreneurs extends React.Component<
         <div>
           <Hero
             title={title}
-            subheading="...let's build"
+            subheading="...let's changhe the world"
             headerClass="masthead hero-ent"
           />
           <div className="row page-text-div">
